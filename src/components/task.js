@@ -2,7 +2,7 @@ import React from "react";
 
 const Task = ({task, deleteTask, completeTask}) => {
     return (
-        <div className="todo" style={{textDecoration: task.isCompleted ? "line-through" : ""}}>
+        <div className="task" style={{textDecoration: task.isCompleted ? "line-through" : ""}}>
             <div className="task">
                 <p>{task.text}</p>
             </div>

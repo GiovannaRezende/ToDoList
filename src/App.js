@@ -38,12 +38,16 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Lista de tarefas</h1>
+      <div className="list">
+      <div className="head">
+        <h1>Lista de tarefas</h1>
+      </div>
       <div className="body">
         <TaskForm addTask={addTask}/>
         {tasks.map((task) => (
           <Task task={task} deleteTask={deleteTask} completeTask={completeTask}/>
         ))}
+      </div>
       </div>
     </div>
   );

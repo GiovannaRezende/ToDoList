@@ -12,7 +12,7 @@ const TaskForm = ({addTask}) => {
     }
 
     return (
-        <div className="todoForm">
+        <div className="taskForm">
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="Digite uma tarefa" value={value} onChange={(e) => setValue(e.target.value)}/>
                 <button type="submit">Adicionar</button>
