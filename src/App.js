@@ -8,7 +8,7 @@ function App() {
   const [tasks, setTasks] = useState([
     {
       id: 1,
-      text: "Estudar React e JavaScript",
+      text: "Estudar JavaScript",
       isCompleted: false,
     }
   ]);

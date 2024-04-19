@@ -1,7 +1,7 @@
 body {
-  padding: 1em;
+  padding: 3em;
   font-family: 'Calibri';
-  background-color: #ddd;
+  background-color: #fff;
 }
 
 .container {
@@ -11,12 +11,12 @@ body {
 }
 
 .list {
+  width: 50%;
+  height: auto;
+  padding: 1em;
+  border-radius: .6em;
+  background-color: #D8D8D8;
   text-align: center;
-}
-
-
-h1 {
-  color: #192772;
 }
 
 input {
@@ -24,7 +24,15 @@ input {
   height: 2em;
   padding: .5em;
   border: none;
-  border-radius: .5em;
+  outline: none;
+  border-radius: .6em;
+  background-color: #fff;
+  margin: 1em;
+}
+
+::placeholder {
+  font-family: 'Calibri';
+  font-size: 14px
 }
 
 .task {
@@ -32,34 +40,30 @@ input {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #ffffff;
+  background-color: #fff;
   padding: .2em;
   margin-top: .5em;
-  border-radius: .5em;
+  border-radius: .6em;
   font-size: 14px;
 }
 
-.complete {
-  background-color: green;
-}
-
-.delete {
-  background-color: red;
+.complete, .delete {
+  padding: .3em;
+  background-color: transparent;
 }
 
 button {
-  background-color: #192772;
-  color: white;
+  background-color: #000000;
+  color: #fff;
+  font-family: 'Calibri';
 
-  padding: .7em;
-  margin-right: .1em;
-  margin-left: .7em;
+  padding: .8em;
   border-radius: .5em;
   border: none;
 
   cursor: pointer;
 
-  opacity: 0.8;
+  opacity: 0.7;
   transition: 0.3s;
 }
 
