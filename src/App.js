@@ -8,14 +8,14 @@ function App() {
   const [tasks, setTasks] = useState([
     {
       id: 1,
-      text: "Estudar JavaScript",
-      isCompleted: false,
+      text: "Finalizar o projeto 'Lista de tarefas' usando ReactJS",
+      isCompleted: true,
     }
   ]);
 
   const addTask = (text) => {
     const newTasks = [...tasks, {
-      id: Math.floor(Math.random() * 1000), //Gera até 1000 IDs aleatórios para cada tarefa criada
+      id: Math.floor(Math.random() * 1000), //Gerar até 1000 IDs para vincular as tarefas adicionadas.
       text,
       isCompleted: false,   
       },
@@ -26,8 +26,8 @@ function App() {
 
   const deleteTask = (id) => {
     const newTasks = [...tasks];
-    const filteredTodos = newTasks.filter((task) => task.id !== id ? task : null);
-    setTasks(filteredTodos);
+    const filteredTasks = newTasks.filter((task) => task.id !== id ? task : null);
+    setTasks(filteredTasks);
   }
 
   const completeTask = (id) => {
@@ -38,7 +38,7 @@ function App() {
 
   return (
     <div className="container">
-      <div className="list">
+      <div className="box">
       <div className="head">
         <h1>Lista de tarefas</h1>
       </div>

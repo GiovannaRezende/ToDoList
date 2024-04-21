@@ -4,11 +4,11 @@ const TaskForm = ({addTask}) => {
 
     const [value, setValue] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e) => { 
         e.preventDefault()
-        if (!value) return; //Validar se está vazio
-        addTask(value); //Adicionar o valor
-        setValue(""); //Limpar campos
+        if (!value) return; //Verificar se há valor para adicionar tarefa.
+        addTask(value); //Adicionar o valor a criação da tarefa.
+        setValue(""); //Limpar campos após adicionar tarefa.
     }
 
     return (
