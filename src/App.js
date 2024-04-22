@@ -15,7 +15,7 @@ function App() {
 
   const addTask = (text) => {
     const newTasks = [...tasks, {
-      id: Math.floor(Math.random() * 1000), //Gerar até 1000 IDs para vincular as tarefas adicionadas.
+      id: Math.floor(Math.random() * 5000), //Gerar até 5000 IDs aleatórios para adicionar tarefas.
       text,
       isCompleted: false,   
       },
