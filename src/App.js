@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Task from './components/task';
 import TaskForm from './components/taskForm';
+import UpdateTodoForm from './components/updateTaskForm';
 import './App.css';
 
 function App() {
@@ -24,16 +25,24 @@ function App() {
     setTasks(newTasks);
   };
 
-  const deleteTask = (id) => {
-    const newTasks = [...tasks];
-    const filteredTasks = newTasks.filter((task) => task.id !== id ? task : null);
-    setTasks(filteredTasks);
+  const updateTask = (id) => {
+    setTasks(tasks.map(task => task.id === id ? {...task, isUpdating: !task.isUpdating} : task));
+  }
+
+  const updatedTask = (text, id) => {
+    setTasks(tasks.map(task => task.id === id ? { ...task, text, isUpdating: !task.isUpdating} : task ));
   }
 
   const completeTask = (id) => {
     const newTasks = [...tasks];
     newTasks.map((task) => task.id === id ? task.isCompleted = !task.isCompleted : task);
     setTasks(newTasks);
+  }
+
+  const deleteTask = (id) => {
+    const newTasks = [...tasks];
+    const filteredTasks = newTasks.filter((task) => task.id !== id ? task : null);
+    setTasks(filteredTasks);
   }
 
   return (
@@ -45,7 +54,11 @@ function App() {
       <div className="body">
         <TaskForm addTask={addTask}/>
         {tasks.map((task) => (
-          <Task task={task} deleteTask={deleteTask} completeTask={completeTask}/>
+          task.isUpdating ? (
+            <UpdateTodoForm updateTask={updatedTask} task={task}/>
+          ) : (
+            <Task key={task.id} task={task} completeTask={completeTask} deleteTask={deleteTask} updateTask={updateTask}/>
+          )
         ))}
       </div>
       </div>
@@ -54,3 +67,6 @@ function App() {
 }
 
 export default App;
+
+
+
