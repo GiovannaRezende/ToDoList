@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Task from './components/task';
 import TaskForm from './components/taskForm';
-import UpdateTodoForm from './components/updateTaskForm';
+import UpdateTaskForm from './components/updateTaskForm';
 import './App.css';
 
 function App() {
@@ -55,7 +55,7 @@ function App() {
         <TaskForm addTask={addTask}/>
         {tasks.map((task) => (
           task.isUpdating ? (
-            <UpdateTodoForm updateTask={updatedTask} task={task}/>
+            <UpdateTaskForm updateTask={updatedTask} task={task}/>
           ) : (
             <Task key={task.id} task={task} completeTask={completeTask} deleteTask={deleteTask} updateTask={updateTask}/>
           )

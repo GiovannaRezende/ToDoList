@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-const  UpdateTodoForm = ({updateTask, task}) => {
+const  UpdateTaskForm = ({updateTask, task}) => {
 
     const [value, setValue] = useState(task.text);
 
@@ -15,11 +15,11 @@ const  UpdateTodoForm = ({updateTask, task}) => {
     return (
         <div className="taskForm">
             <form onSubmit={handleTask}>
-                <input type="text" placeholder="Edite uma tarefa..." value={value} onChange={(e) => setValue(e.target.value)}/>
+                <input type="text" placeholder="Edite a tarefa..." value={value} onChange={(e) => setValue(e.target.value)}/>
                 <button type="submit">Editar</button>
             </form>
         </div>
     )
 }
 
-export default UpdateTodoForm;
+export default UpdateTaskForm;
